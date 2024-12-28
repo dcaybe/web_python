@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/trangchu.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="{% url 'home'  %}">Sach</a></li>
+                <li><a href="{% url 'nhanvien'  %}">Nhan vien</a></li>
+                <li><a href="{% url 'sinhvien'  %}">Sinh vien</a></li>
+                
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="content_heading">SÁCH CÓ TRONG THƯ VIỆN</h1>
+            <table class="table" >
+                <tr>
+                    <th>Mã sách</th>
+                    <th>Tên sách</th>
+                    <th>Vị trí sách</th>
+                    <th colspan="2">Tùy chọn</th>
+                    
+                </tr>
+                {% for sach in sachs %}
+                <tr>
+                    <td>{{sach.ma_sach}}</td>
+                    <td>{{sach.ten_sach}}</td>
+                    <td>{{sach.vi_tri}}</td>
+                    <td> <a href="{% url 'suasachhtml' sach.ma_sach %} ">Sửa</a></td>
+                    <td> <a href="{% url 'xoasachhtml' sach.ma_sach %}">Xóa</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <a class="add" href="{% url 'themsachhtml'  %}">Thêm</a>
+        </div>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

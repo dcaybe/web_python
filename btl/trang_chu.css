@@ -1,0 +1,151 @@
+body {}
+
+input{
+    border: none;
+}
+.container {
+    padding-top: 50px;
+    width: 40%;
+    margin: auto;
+}
+
+
+.main {
+    margin-top: 8px;
+    border: 2px solid grey;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;  
+    z-index: 100;
+
+}
+
+.layer_top {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 58px;
+    background-color: #000;
+}
+
+.layer_left {
+    position: fixed;
+    top: 0px;
+    background-color: #000;
+    height: 100%;
+    width: 30%;
+}
+
+.layer_right {
+    position: fixed;
+    top: 0px;
+    right: 0;
+    background-color: #000;
+    height: 100%;
+    width: 30%;
+}
+
+.top {
+    display: flex;
+    padding: 20px 20px 24px 20px;
+  
+    justify-content: space-between;
+
+}
+
+.top_left {
+    display: flex;
+
+}
+
+.top_right {
+    padding: 0 20px;
+    line-height: 40px;
+    margin: 2px 0px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+
+.dang_bai_box{
+    display: none;
+    position: absolute;
+    height: 250px;
+    width: 38%;
+    background-color: red;
+    border-radius: 18px;
+    border: 1px solid grey;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.top--dang_bai_box{
+padding: 10px;
+justify-content:first baseline   ;
+}
+
+.huy_dang_bai{
+    display: block;
+    padding:0 20px;
+}
+.btn--remove_css{
+    background-color: transparent;
+    border-style: none;
+    padding-block: 0px;
+    padding-inline: 0px;
+}
+
+.line--1px{
+    height: 1px;
+    background-color: grey;
+}
+.main_dang_bai_box{
+    margin-top: 20px;
+    background-color: aqua;
+    display: flex;
+    padding: 0 20px;
+}
+
+.bottom_dang_bai_box{
+    line-height: 40px;
+    margin-top: 50px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+.avt {
+    border-radius: 50%;
+
+}
+
+.nav {
+    z-index: 2;
+
+    background-color: red;
+    height: 100%;
+    width: 80px;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nav_icon {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.them_tin {
+    position: fixed;
+    right: 20px;
+    bottom: 0px;
+    padding: 20px 30px;
+    border-radius: 24px;
+    color: #fff;
+    border: 1px solid grey;
+    z-index: 2;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SÁCH TRONG THƯ VIỆN</h1>
+    <table border="1">
+        <tr>
+            <th>Mã sách</th>
+            <th>Tên sách</th>
+            <th>Vị trí sách</th>
+          
+        </tr>
+        {% for sach in sachs %}
+        <tr>
+            <td>{{sach.ma_sach}}</td>
+            <td>{{sach.ten_sach}}</td>
+            <td>{{sach.vi_tri}}</td>
+            <td> <a href="{% url 'suasachhtml' sach.ma_sach %} ">Sửa</a></td>
+            <td> <a href="{% url 'xoasachhtml' sach.ma_sach %}">Xóa</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'themsachhtml'  %}">Thêm</a>
+</body>
+</html>

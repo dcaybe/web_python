@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DANH SÁCH NHÂN VIÊN TRONG THƯ VIỆN</h1>
+   <table border="1">
+    
+        <tr>
+            <th>Tên nhân viên</th>  
+            <th>Mã nhân viên</th>
+        </tr>
+        {% for nhanvien in nhanviens%}
+        <tr>
+           <td>{{nhanvien.ten_nv}}</td>
+           <td>{{nhanvien.ma_nv}}</td>
+            <td><a href="{% url nhanvien.ma_nv%}"></a>Sửa</td>
+            <td><a href="{% url nhanvien.ma_nv%}"></a>Xóa</td>
+        </tr>
+        {% endfor %}
+   </table>
+   <a href="{% url %}"></a>
+</body>
+</html>

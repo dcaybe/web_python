@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/trangchu.css' %}">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="{% url 'home'  %}">Sach</a></li>
+                <li><a href="{% url 'nhanvien'  %}">Nhan vien</a></li>
+                <li><a href="{% url 'sinhvien'  %}">Sinh vien</a></li>
+                
+            </ul>
+        </div>
+        <div class="content">
+            <form action="" method="post">
+                {% csrf_token %}
+               
+               
+                Nhap ten sach moi: <input type="text" name="ten_sach" id="">
+               
+                <input type="submit" name="update" value="Cap nhat">
+               </form>
+        </div>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

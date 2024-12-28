@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="title">DANH SÁCH MƯỢN SÁCH</h1>
+    <table border="1px">
+        <tr>
+            <th>Tên sách </th>
+            <th>Học phần</th>
+            <th>Người mượn</th>
+            <th>Ngày mượn</th>
+            <th>Trả sách</th>
+        </tr>
+        {% for Sach_account in Sach_accounts %}
+        <tr>
+            <td>{{ Sach_account.sach.name }}</td>
+            <td>{{ Sach_account.sach.Nhom_hoc_phan }}</td>
+            <td>{{ Sach_account.account }}</td>
+            <td>{{ Sach_account.start_time }}</td>
+            <td><a href="{% url 'stop_using_service' Sach_account.id %}">Trả</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

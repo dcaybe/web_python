@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/my_app.css' %}">
+    <title>Danh Sách USER</title>
+</head>
+<body>
+    <h1 class="title">DANH SÁCH USER</h1>
+    <table border="1px">
+        <tr>
+            <th>Tên khách hàng</th>
+            <th>Số dư</th>
+            <th>Mật khẩu</th>
+            
+        </tr>
+    {% for account in accounts %}
+        <tr>
+            <td>{{ account.name_user }}</td>
+            <td>{{ account.balance }}</td>
+            <td>{{ account.password }}</td>
+
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html> 

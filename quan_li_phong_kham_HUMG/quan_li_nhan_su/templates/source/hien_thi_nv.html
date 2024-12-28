@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+               
+                
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="content_heading">DANH SÁCH NHÂN VIÊN</h1>
+            <table class="table" >
+                <tr>
+                    <th>Tên nhân viên</th>
+                    <th>Vị trí</th>
+                    <th>Tuổi</th>
+                    <th>Giới tính</th>
+                    <th>Mode</th>
+                     
+                </tr>
+                {% for nhanvien in nhanviens %}
+                <tr>
+                    <td>{{nhanvien.name}}</td>
+                    <td>{{nhanvien.vi_tri}}</td>
+                    <td>{{nhanvien.tuoi}}</td>
+                    <td>{{nhanvien.gioi_tinh}}</td>
+                    <td>{{nhanvien.mode}}</td>
+                    <td> <a href="{% url 'delete' nhanvien.name %}">Xóa</a></td>
+                  
+
+
+                </tr>
+                {% endfor %}
+            </table>
+            <a class="add" href="{% url 'insert_nhan_vien'  %}">Thêm</a>
+        
+        
+        </div>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

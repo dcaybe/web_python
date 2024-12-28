@@ -1,0 +1,9 @@
+.container{
+    margin: 0 300px;
+}
+
+.main{
+    background-color: red;
+    color: rgb(238, 143, 20);
+    font-size: 50px;
+}

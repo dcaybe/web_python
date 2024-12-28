@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/my_app.css' %}">
+    <title>Danh Sách Máy Tính</title>
+</head>
+
+<body>
+    <h1> TÌM KIẾM NHÂN VIÊN</h1>
+    <form method="get" action="">
+        {{ form.as_p }}
+        <button type="submit">Tìm kiếm</button>
+    </form>
+
+    {% if computers %}
+    <h1 class="title">DANH SÁCH NHÂN VIÊN</h1>
+    <table border="1px">
+        <tr>
+            <th>Tên máy</th>
+            <th>Loại máy</th>
+            <th>Giá giờ chơi</th>
+            <th>Cấu hình</th>
+        </tr>
+        {% for computer in computers %}
+        <tr>
+            <td>{{ computer.computer_name }}</td>
+            <td>{{ computer.computer_type }}</td>
+            <td>{{ computer.computer_type.price }}</td>
+            <td>{{ computer.computer_type.configuration }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% elif computers is not None %}
+    <p>Không tìm thấy máy tính nào phù hợp</p>
+    {% endif %}
+</body>
+
+</html>

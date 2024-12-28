@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+               <li><a href="{% url 'thiet_lap_muon_sach' %}">Mượn sách</a></li>
+               <li><a href="{% url 'view_Sach_account' %}">Sách đang mượn</a></li>
+               <li><a href="{% url 'view_Sach_account_historic' %}">Lịch sử</a></li>
+                
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="content_heading">SÁCH TRONG THƯ VIỆN</h1>
+            <table class="table" >
+                <tr>
+                    <th>Tên sách</th>
+                    <th>Tác giả</th>
+                    <th>Loại sách</th>
+                   
+                    <th>Năm xuất bản</th>
+                    <th>Nhóm học phần</th>
+                    <th>Số lượng</th>
+                    <th >Tùy chọn</th>
+                    
+                </tr>
+                {% for sach in sachs %}
+                <tr>
+                    <td>{{sach.name}}</td>
+                    <td>{{sach.tac_gia}}</td>
+                    <td>{{sach.Nhom_hoc_phan.Loai_sach}}</td>
+                    <td>{{sach.nam_xuat_ban}}</td>
+                    <td>{{sach.Nhom_hoc_phan}}</td>
+                    <td>{{sach.so_luong}}</td>
+                    <td> <a href="{% url 'delete' sach.name %}">Xóa</a></td>
+                   
+
+
+                </tr>
+                {% endfor %}
+            </table>
+            <a class="add" href="{% url 'insert_sach'  %}">Thêm</a>
+        
+        
+        </div>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

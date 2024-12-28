@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        Đây là header
+    </header>
+    {% if user.is_authenticated %}
+    xin chao ,{{user.username}}, <a href="{% url 'logout' %}">Đăng xuất</a>
+    {{% endif %}}
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+            <!-- danh sách view yêu cầu phải đăng nhập -->
+            <li>
+                <a href="{% url 'insert_computer_type'  %}">Dừng chơi</a>
+            </li>
+            {{% end %}}
+            <!-- danh sách view không yêu cầu phải đăng nhập -->
+            <li>
+                <a href="{% url 'login_view'  %}">Đăng nhập</a>
+            </li>
+            <li>
+                <a href="{% url 'search_computer'  %}">Tìm kiếm máy tính</a>
+
+            </li>
+            {{% endif %}}
+
+        </ul>
+        
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer">
+        Phần footer
+    </footer>
+</body>
+
+</html>

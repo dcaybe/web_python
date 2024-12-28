@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="">option_1</a></li>
+                <li><a href="">option_2</a></li>
+                <li><a href="">option_3</a></li>
+                
+            </ul>
+        </div>
+        <div class="content">
+            <h1 class="content_heading">DANH SÁCH SINH VIÊN</h1>
+            <table class="table" >
+                <tr>
+                    <th>Tên sinh viên</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Chuyên nghành</th>
+                    <th>Khoa</th>
+                    <td></td>
+                    <td></td>   
+                </tr>
+                {% for sinhvien in sinhviens %}
+                <tr>
+                    <td>{{sinhvien.student_name}}</td>
+                    <td>{{sinhvien.gioi_tinh}}</td>
+                    <td>{{sinhvien.birthday}}</td>
+                    <td>{{sinhvien.Majors}}</td>
+                    <td>{{sinhvien.Majors.Departments}}</td>
+                    <td> <a href="{% url 'change' sinhvien.student_name sinhvien.Majors sinhvien.Majors.Departments %} ">Sửa</a></td>
+                    <td> <a href="{% url 'delete' sinhvien.student_name %}">Xóa</a></td>
+
+
+                </tr>
+                {% endfor %}
+            </table>
+            <a class="add" href="{% url 'insert_sinh_vien'  %}">Thêm</a>
+        
+        </div>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

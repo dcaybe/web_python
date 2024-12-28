@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+       
+       
+        Nhập tên sinh viên mới: <input type="text" name="student_name_new" id="">
+        Nhập giới tính mới: <input type="text" name="gioi_tinh_new" id="">
+        Nhập ngày sinh mới: <input type="date" name="birthday_new" id="">
+        Nhập ngày chuyên ngành mới: <input type="text" name="Majors_name_new" id="">
+        Nhập ngày khoa mới: <input type="text" name="Departments_name_new" id="">
+       
+        <input type="submit" name="update" value="Cap nhat">
+       </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+   
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <ul class="nav">
+                <li><a href="">option_1</a></li>
+                <li><a href="">option_2</a></li>
+                <li><a href="">option_3</a></li>
+                
+            </ul>
+            <br>
+            <form action="" method="post">
+                {% csrf_token %}
+               
+               
+                Nhập tên nhân viên mới: <input type="text" name="name_new" id="">
+                <br><br>
+                Nhập giới tính mới: <input type="text" name="gioi_tinh_new" id="">
+                <br><br>
+                Nhập tuổi mới: <input type="date" name="tuoi_new" id="">
+                <br><br>
+                Nhập bộ vị trí mới: <input type="text" name="vi_tri_new" id="">
+                <br><br>
+                Nhập chế độ làm mới: <input type="text" name="mode_new" id="">
+                <br><br>
+                <input type="submit" name="update" value="Cap nhat">
+               </form>
+        <div class="footer">
+            Copyright © 2020 Trường Đại học Mỏ - Địa chất <br>Version: MOHN-2024.09G.33 <br>Design byAQTECH.VN
+        </div>
+    </div>
+</body>
+</html>

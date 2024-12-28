@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="title">DANH SÁCH MÁY TÍNH</h1>
+    <table border="1px">
+        <tr>
+            <th>Tên máy</th>
+            <th>Loại máy</th>
+            <th>khách hàng</th>
+            <th>giờ bắt đầu chơi</th>
+            <th>dừng sử dụng</th>
+        </tr>
+        {% for computer_account in computer_accounts %}
+        <tr>
+            <td>{{ computer_account.computer.computer_name }}</td>
+            <td>{{ computer_account.computer.computer_type }}</td>
+            <td>{{ computer_account.account }}</td>
+            <td>{{ computer_account.start_time }}</td>
+            <td><a href="{% url 'stop_using_service' computer_account.id %}">Dừng chơi</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

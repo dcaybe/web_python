@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="title" >
+            ĐĂNG KÝ NHẬP SÁCH
+        </div>
+        <div class="content">
+            <div class="infor">
+                <div class="name">
+                    <b>Mã nhập:</b> <br> 
+                    <input type="text" size="50px" name="ma_nhap">
+                </div>
+                
+                <div class="name">
+                    <b>Mã sách:</b> <br> 
+                    <input type="text" size="50px" name="ma_sach">
+                </div>
+                
+                <div class="name">
+                    <b>Mã nhân viên:</b> <br> 
+                    <input type="text" size="50px" name="ma_nv">
+                </div>
+                
+                <div class="name">
+                    <b>Ngày nhập:</b> <br> 
+                    <input type="date" size="50px" name="ngay_nhap">    
+                
+                <div class="robot">
+                    
+                    <table>
+                        <tr>
+                            <td><input type="checkbox"> I'm not a robot<td>
+                                
+                            <td class="img">
+                                <img src="../img/logo_48.png" width="30" height="30">
+                                <br>
+                               <font size="2"> reCAPTCHA</font>
+                                <br>
+                               <font size="1"> Privacy - Terms</font>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="submit",>
+                    Đăng kí ngay
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

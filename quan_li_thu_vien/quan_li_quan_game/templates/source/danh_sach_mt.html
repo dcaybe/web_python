@@ -1,0 +1,31 @@
+    <!DOCTYPE html>
+    {% load static %}
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/my_app.css' %}">
+        <title>Danh Sách Máy Tính</title>
+    </head>
+    <body>
+        <h1 class="title">DANH SÁCH MÁY TÍNH</h1>
+        <table border="1px">
+            <tr>
+                <th>Tên máy</th>
+                <th>Loại máy</th>
+                <th>Giá giờ chơi</th>
+                <th>Cấu hình</th>
+                <th>Trạng thái</th>
+
+            </tr>
+        {% for computer in computers %}
+            <tr>
+                <td>{{ computer.computer_name }}</td>
+                <td>{{ computer.computer_type }}</td>
+                <td>{{ computer.computer_type.price }}</td>
+                <td>{{ computer.computer_type.configuration }}</td>
+                <td>{{ computer.trang_thai }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+    </html> 

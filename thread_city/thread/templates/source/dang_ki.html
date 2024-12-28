@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu</title>
+
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>ĐĂNG NHẬP</h1>
+        <!-- {% if messages %}
+            {% for  message in messages %}
+                {{message}}
+        {% end if %} -->
+        <input type="text" name="username" placeholder="Tên đăng nhập">
+        <input type="password" name="password" placeholder="Mật khẩu">
+        <input type="submit" value="Đăng nhập">
+    </form>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Sinh Viên</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Danh Sách Sinh Viên</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Trang Chủ</a></li>
+                <li><a href="/themsinhvien">Thêm Sinh Viên</a></li>
+                <li><a href="/quanlylop">Quản Lý Lớp</a></li>
+                <li><a href="/quanlymonhoc">Quản Lý Môn Học</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã Sinh Viên</th>
+                    <th>Tên Sinh Viên</th>
+                    <th>Tuổi</th>
+                    <th>Lớp</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Mỗi sinh viên sẽ là một hàng -->
+                <tr>
+                    <td>SV001</td>
+                    <td>Nguyen Van A</td>
+                    <td>20</td>
+                    <td>K58</td>
+                    <td>
+                        <a href="/suasinhvien/1">Sửa</a> | 
+                        <a href="/xoasinhvien/1">Xóa</a>
+                    </td>
+                </tr>
+                <!-- Thêm các hàng tương tự cho mỗi sinh viên -->
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>Liên hệ: info@example.com</p>
+        <p><a href="/privacy">Chính sách bảo mật</a> | <a href="/terms">Điều khoản sử dụng</a></p>
+    </footer>
+</body>
+</html>
